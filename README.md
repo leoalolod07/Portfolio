@@ -36,7 +36,7 @@ To work in IT support and help desk roles, providing efficient solutions to tech
 ## 📞 Contact Information
 
 - **Email:** [leo.alolod@mcclawis.edu.ph](mailto:leo.alolod@mcclawis.edu.ph)  
-- **LinkedIn / GitHub:** Add your profile links here  
+- **LinkedIn / GitHub:https://github.com/leoalolod07/Portfolio.git 
 
 ## 🚀 How to View
 
