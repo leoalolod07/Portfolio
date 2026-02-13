@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -314,3 +315,247 @@ window.addEventListener('resize', () => {
 
 </body>
 </html>
+=======
+<<<<<<< HEAD
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Lovable App</title>
+    <meta name="description" content="Lovable Generated Project" />
+    <meta name="author" content="Lovable" />
+
+    <!-- TODO: Update og:title to match your application name -->
+    <meta property="og:title" content="Lovable App" />
+    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Alolod Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: rgba(0, 123, 255, 0.9);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            animation: slideInFromTop 1s ease-out;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 1rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        h2 {
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 0.5rem;
+            color: #007bff;
+            animation: slideInFromLeft 1s ease-out;
+        }
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+            animation: fadeIn 2s ease-out both;
+        }
+        li:nth-child(1) { animation-delay: 0.1s; }
+        li:nth-child(2) { animation-delay: 0.2s; }
+        li:nth-child(3) { animation-delay: 0.3s; }
+        li:nth-child(4) { animation-delay: 0.4s; }
+        li:nth-child(5) { animation-delay: 0.5s; }
+        li:nth-child(6) { animation-delay: 0.6s; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        li::before {
+            content: "▶";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: rgba(0, 123, 255, 0.9);
+            color: white;
+            animation: slideInFromBottom 1s ease-out;
+        }
+        @keyframes slideInFromBottom {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <header>
+        <img src=""C:\Users\DELL\Desktop\leo.jpg"" alt="Profile Picture" class="profile-pic">
+        <h1>Leo Alolod Portfolio</h1>
+    </header>
+    <div class="container">
+        <section id="personal-info">
+            <h2>👤 Personal Information</h2>
+            <p><strong>Name:</strong> Leo Alolod</p>
+            <p><strong>Course:</strong> BSIT</p>
+            <p><strong>Year:</strong> 2nd Year (South)</p>
+            <p><strong>School:</strong> Madridejos Community College</p>
+        </section>
+        
+        <section id="career-objective">
+            <h2>🎯 Career Objective</h2>
+            <p>To work in IT support and help desk roles, providing efficient solutions to technical issues while continuously developing my skills in information technology.</p>
+        </section>
+        
+        <section id="skills">
+            <h2>🛠 Skills</h2>
+            <ul>
+                <li>IT Support and Troubleshooting</li>
+                <li>Network Configuration and Maintenance</li>
+                <li>Computer Hardware and Software Management</li>
+                <li>Problem-Solving and Critical Thinking</li>
+                <li>Basic Programming (Python, HTML, CSS)</li>
+                <li>Data Analysis and Microsoft Office Proficiency</li>
+            </ul>
+        </section>
+        
+        <section id="projects">
+            <h2>📂 Projects</h2>
+            <ul>
+                <li><strong>Student Record Automation System:</strong> Developed a system to improve accuracy and efficiency in student record management using Python and Excel.</li>
+                <li><strong>COVID-19 Dashboard:</strong> Created a dashboard for tracking COVID-19 cases, recoveries, deaths, and vaccination data using Python, Flask, and JavaScript.</li>
+                <li><strong>Help Desk Support Prototype:</strong> Built a basic IT help desk workflow system for internal support tasks.</li>
+            </ul>
+        </section>
+        
+        <section id="contact">
+            <h2>📞 Contact Information</h2>
+            <p><strong>Email:</strong> leo.alolod@mcclawis.edu.ph</p>
+            <p><strong>LinkedIn / GitHub:</strong> https://github.com/leoalolod07/leo-alolod.git</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2026 Leo Alolod. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+>>>>>>> b6ce82b4832d8fc7190c893d1261babd5225565b
+>>>>>>> ab986ebcbba5c2dd43e9ba9a942aae265f4cf3b4

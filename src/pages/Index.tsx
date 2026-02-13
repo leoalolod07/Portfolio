@@ -1,0 +1,23 @@
+import FloatingShapes from "@/components/FloatingShapes";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
+
+const Index = () => {
+  return (
+    <div className="relative min-h-screen bg-background">
+      <FloatingShapes />
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <ContactSection />
+    </div>
+  );
+};
+
+export default Index;
