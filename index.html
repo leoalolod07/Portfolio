@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leo Hacker Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Consolas, monospace;
+}
+
+body{
+    background:black;
+    color:#00ff9c;
+    overflow-x:hidden;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade-in animation for the body */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:220px;
+    height:100%;
+    background:#020617;
+    padding:20px;
+    box-shadow:0 0 20px #00ff9c;
+    animation: slideInLeft 1s ease-out;
+    z-index: 10; /* Ensure sidebar is above canvas */
+}
+
+/* Slide-in animation for sidebar */
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.sidebar h2{
+    color:#00ff9c;
+    text-align:center;
+    margin-bottom:30px;
+    animation: glow 2s infinite alternate;
+}
+
+/* Glowing animation for title */
+@keyframes glow {
+    from { text-shadow: 0 0 5px #00ff9c, 0 0 20px #00ff9c; }
+    to { text-shadow: 0 0 10px #00ff9c, 0 0 30px #00ff9c, 0 0 40px #00ff9c; }
+}
+
+.sidebar a{
+    display:block;
+    color:#00ff9c;
+    text-decoration:none;
+    margin:15px 0;
+    padding:10px;
+    border:1px solid #00ff9c;
+    border-radius:5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #00ff9c, transparent);
+    transition: left 0.5s;
+}
+
+.sidebar a:hover::before {
+    left: 100%;
+}
+
+.sidebar a:hover{
+    background:#00ff9c;
+    color:black;
+    box-shadow:0 0 15px #00ff9c;
+    transform: scale(1.05);
+}
+
+/* MAIN */
+.main{
+    margin-left:240px;
+    padding:30px;
+    animation: slideInRight 1.5s ease-out;
+    position: relative;
+    z-index: 10; /* Ensure main content is above canvas */
+}
+
+/* Slide-in animation for main content */
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* NEON TEXT */
+.neon{
+    font-size:40px;
+    text-shadow:0 0 5px #00ff9c,0 0 20px #00ff9c;
+    animation: pulse 2s infinite;
+}
+
+/* Pulsing animation for neon text */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* PROFILE */
+.profile{
+    margin-top:20px;
+    animation: bounceIn 1s ease-out;
+}
+
+/* Bounce-in animation for profile */
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.profile img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:3px solid #00ff9c;
+    box-shadow:0 0 25px #00ff9c;
+    transition: transform 0.3s ease;
+}
+
+.profile img:hover {
+    transform: rotate(360deg);
+}
+
+/* SECTION */
+section{
+    margin-top:40px;
+    padding:20px;
+    border:1px solid #00ff9c;
+    box-shadow:0 0 15px #00ff9c inset;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out;
+}
+
+section:hover {
+    box-shadow: 0 0 25px #00ff9c, 0 0 50px #00ff9c inset;
+    transform: translateY(-5px);
+}
+
+/* Fade-in-up animation for sections */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* TYPING */
+#typing{
+    margin-top:10px;
+    font-size:18px;
+    color:#00ff9c;
+    border-right: 2px solid #00ff9c;
+    animation: blink 1s infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    0%, 50% { border-color: #00ff9c; }
+    51%, 100% { border-color: transparent; }
+}
+
+/* MATRIX RAIN CANVAS */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind content */
+    pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MATRIX RAIN CANVAS -->
+<canvas id="matrixCanvas"></canvas>
+
+<!-- MUSIC BACKGROUND -->
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>PORTFOLIO</h2>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="neon">ACCESS GRANTED</div>
+<div id="typing"></div>
+
+<div class="profile">
+<img src="icon.jfif" alt="Leo Alolod Profile">
+</div>
+
+<section id="about">
+<h2>About Me</h2>
+<p>I am Leo Alolod, BSIT 3 - South student and future IT professional. 
+Passionate about hacking (ethical), programming, and technology.</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<p>HTML | CSS | Python | Flask | GitHub | Troubleshooting</p>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<p>COVID-19 Dashboard<br>Student Record System<br>Portfolio Website</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: leo.alolod@mcclawis.edu.ph</p>
+<p>GitHub: github.com/leoalolod07</p>
+</section>
+
+</div>
+
+<script>
+/* typing hacker effect */
+const text = "Initializing system... Welcome Leo Alolod | BSIT Hacker Mode Activated";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+type();
+
+/* Matrix Rain Effect */
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const matrixChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+{}|:<>?[]\\;\'",./`~';
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+}
+
+function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#00ff9c';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 35);
+
+// Resize canvas on window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    drops.length = canvas.width / fontSize;
+    for (let x = 0; x < columns; x++) {
+        drops[x] = 1;
+    }
+});
+</script>
+
+</body>
+</html>
